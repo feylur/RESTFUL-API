@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Manager</title>
+  <link rel="stylesheet" href="./bootstrap.min.css" />
+  <link rel="stylesheet" href="./jqstyles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Restful API</h1>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">Add Recipe</button>
+
+    <div id="recipes">Loading ...</div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add New Recipe</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="addRecipeForm">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Title of the Recipe" required>
+              </div>
+              <div class="form-group">
+                <label for="body">Body</label>
+                <input type="text" class="form-control" name="body" id="body" placeholder="Recipe Details" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="addBtn" class="btn btn-info" data-dismiss="modal">Add Recipe</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Update Record</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="updateRecipeForm">
+              <input type="hidden" id="updateId" />
+              <div class="form-group">
+                <label for="updateTitle">Title</label>
+                <input type="text" class="form-control" name="updateTitle" id="updateTitle" placeholder="" required>
+              </div>
+              <div class="form-group">
+                <label for="updateBody">Body</label>
+                <textarea class="form-control" name="updateBody" id="updateBody" rows="3" required></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="updateSave" class="btn btn-primary" data-dismiss="modal">Update</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./jquery-3.4.1.min.js"></script>
+  <script src="./popper.min.js"></script>
+  <script src="./bootstrap.min.js"></script>
+  <script src="./jqcrud.js"></script>
+</body>
+</html>
